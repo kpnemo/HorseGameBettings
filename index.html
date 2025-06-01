@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐎 Horse Racing Betting Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Player Setup Screen -->
+        <div id="setup-screen" class="screen active">
+            <h1>🐎 Horse Racing Game</h1>
+            <div id="player-setup">
+                <h2>Add Players (2-8)</h2>
+                <div id="player-inputs">
+                    <div class="player-input">
+                        <input type="text" placeholder="Player 1 Name" maxlength="12">
+                        <button class="remove-player" style="display:none;">×</button>
+                    </div>
+                    <div class="player-input">
+                        <input type="text" placeholder="Player 2 Name" maxlength="12">
+                        <button class="remove-player" style="display:none;">×</button>
+                    </div>
+                </div>
+                <button id="add-player">+ Add Player</button>
+                <div id="setup-controls">
+                    <button id="start-game" disabled>START RACE!</button>
+                    <p id="player-count">2 players added</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen">
+            <div id="game-header">
+                <h2>🏁 Horse Racing Championship</h2>
+                <button id="pause-race" style="display:none;">⏸️ Pause</button>
+            </div>
+            <canvas id="race-canvas" width="1200" height="600"></canvas>
+            <div id="race-info">
+                <div id="current-positions"></div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="screen">
+            <h1>🏆 Race Results!</h1>
+            <div id="winner-announcement">
+                <div id="winner-horse"></div>
+                <h2 id="winner-text"></h2>
+                <div id="final-positions"></div>
+            </div>
+            <div id="results-controls">
+                <button id="play-again">🐎 Race Again</button>
+                <button id="reset-game">🔄 New Players</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="sounds.js"></script>
+    <script src="horse.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>

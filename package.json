@@ -1,0 +1,25 @@
+{
+  "name": "horse-racing-game",
+  "version": "1.0.0",
+  "description": "A fun retro horse racing betting game",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "build": "echo 'No build step required for static site'",
+    "dev": "npx serve ."
+  },
+  "keywords": [
+    "game",
+    "horse-racing",
+    "betting",
+    "retro",
+    "canvas",
+    "javascript"
+  ],
+  "author": "Claude Code",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "serve": "^14.0.0"
+  }
+}

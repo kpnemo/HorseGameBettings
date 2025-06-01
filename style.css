@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background: linear-gradient(135deg, #4CAF50, #45a049, #2196F3);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+#game-container {
+    max-width: 1400px;
+    width: 95%;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.screen {
+    display: none;
+    padding: 30px;
+    text-align: center;
+}
+
+.screen.active {
+    display: block;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 30px;
+    color: #2c5234;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #2c5234;
+}
+
+#player-setup {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#player-inputs {
+    margin: 20px 0;
+}
+
+.player-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    gap: 10px;
+}
+
+.player-input input {
+    padding: 15px;
+    font-size: 1.2em;
+    border: 3px solid #4CAF50;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+}
+
+.player-input input:focus {
+    outline: none;
+    border-color: #2196F3;
+    transform: scale(1.02);
+    transition: all 0.2s;
+}
+
+.remove-player {
+    background: #f44336;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.remove-player:hover {
+    background: #d32f2f;
+    transform: scale(1.1);
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.3em;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;
+    transition: all 0.2s;
+    text-transform: uppercase;
+}
+
+#add-player {
+    background: #2196F3;
+    color: white;
+}
+
+#add-player:hover {
+    background: #1976D2;
+    transform: scale(1.05);
+}
+
+#add-player:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+#start-game {
+    background: #4CAF50;
+    color: white;
+    font-size: 1.5em;
+    padding: 20px 40px;
+    animation: pulse 2s infinite;
+}
+
+#start-game:enabled:hover {
+    background: #45a049;
+    transform: scale(1.1);
+}
+
+#start-game:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    animation: none;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+#player-count {
+    margin-top: 15px;
+    font-size: 1.1em;
+    color: #666;
+}
+
+#game-screen {
+    padding: 20px;
+}
+
+#game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#race-canvas {
+    border: 5px solid #4CAF50;
+    border-radius: 15px;
+    background: linear-gradient(to bottom, #87CEEB 0%, #87CEEB 30%, #90EE90 30%, #228B22 100%);
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+#race-info {
+    margin-top: 20px;
+}
+
+#current-positions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.position-item {
+    background: rgba(76, 175, 80, 0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#results-screen {
+    text-align: center;
+}
+
+#winner-announcement {
+    margin: 30px 0;
+}
+
+#winner-horse {
+    font-size: 5em;
+    margin: 20px 0;
+}
+
+#winner-text {
+    color: #FFD700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin: 20px 0;
+}
+
+#final-positions {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 400px;
+}
+
+.final-position {
+    margin: 5px 0;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.final-position.winner {
+    background: #FFD700;
+    border-radius: 5px;
+}
+
+#play-again, #reset-game {
+    background: #4CAF50;
+    color: white;
+    font-size: 1.2em;
+}
+
+#play-again:hover, #reset-game:hover {
+    background: #45a049;
+    transform: scale(1.05);
+}
+
+#reset-game {
+    background: #FF9800;
+}
+
+#reset-game:hover {
+    background: #F57C00;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+    
+    .player-input input {
+        width: 250px;
+        font-size: 1em;
+    }
+    
+    button {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+    
+    #race-canvas {
+        width: 100%;
+        height: 300px;
+    }
+}
